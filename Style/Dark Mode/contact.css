@@ -1,0 +1,71 @@
+
+/* ================================================================
+   16. DARK MODE — CONTACT PAGE (form, inputs, icons)
+   ================================================================ */
+
+/* Main contact card */
+html.dark-mode .contact-box {
+  background:   rgba(6, 13, 30, 0.75);
+  border-color: rgba(0, 212, 255, 0.12);
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(0, 212, 255, 0.06);
+}
+
+/* Contact info headings */
+html.dark-mode .contact-info .section-heading {
+  color: #d8e4f0;
+}
+
+html.dark-mode .contact-info .section-body {
+  color: #6a90a8;
+}
+
+/* Contact icon badge */
+html.dark-mode .contact-icon {
+  background:   rgba(0, 212, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.20);
+  color:        #00d4ff;
+}
+
+html.dark-mode .contact-item:hover .contact-icon {
+  background:   rgba(0, 212, 255, 0.18);
+  border-color: rgba(0, 212, 255, 0.40);
+  box-shadow:   0 0 12px rgba(0, 212, 255, 0.18);
+}
+
+/* Contact text */
+html.dark-mode .contact-text {
+  color: #6a90a8;
+}
+
+html.dark-mode .contact-item:hover .contact-text {
+  color: #d0dae8;
+}
+
+/* Form labels */
+html.dark-mode .form-group label {
+  color: #5a7a94;
+  letter-spacing: 0.12em;
+}
+
+/* Form inputs & textarea */
+html.dark-mode .form-group input,
+html.dark-mode .form-group textarea {
+  background:   rgba(0, 212, 255, 0.04);
+  border-color: rgba(0, 212, 255, 0.16);
+  color:        #d0dae8;
+}
+
+html.dark-mode .form-group input::placeholder,
+html.dark-mode .form-group textarea::placeholder {
+  color: rgba(106, 144, 168, 0.60);
+}
+
+html.dark-mode .form-group input:focus,
+html.dark-mode .form-group textarea:focus {
+  background:   rgba(0, 212, 255, 0.07);
+  border-color: rgba(0, 212, 255, 0.45);
+  box-shadow:   0 0 0 3px rgba(0, 212, 255, 0.12), 0 0 16px rgba(0, 212, 255, 0.10);
+  color:        #d8e4f0;
+}

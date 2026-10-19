@@ -1,0 +1,80 @@
+/* ===========================================================
+   ABOUT PAGE — team image + project description, team member list
+   =========================================================== */
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 80px 80px;
+  max-width: 1280px;
+  margin:auto;
+  width: 100%;
+}
+
+/* Left column: team image */
+.about-image {
+  flex: 260px;
+  max-width: 340px;
+}
+
+.about-image img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  border-radius: 24px;
+  border: 1px solid rgba(69, 104, 130, 0.22);
+  object-fit: cover;
+}
+
+/* Right column: project description */
+.about-content {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.about-section .section-body.lead {
+  margin-bottom: 16px;
+}
+
+
+.team-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(69, 104, 130, 0.22);
+  font-size: 0.88rem;
+}
+
+.team-row:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.team-name {
+  font-weight: 600;
+  color: #348787;
+}
+
+.team-id {
+  font-weight: 400;
+  color: #113c3c;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+/* CTA buttons below team list */
+.about-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 36px;
+}

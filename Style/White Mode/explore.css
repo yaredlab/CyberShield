@@ -1,0 +1,87 @@
+/* ===========================================================
+   EXPLORE PAGE — topic cards and video section
+   =========================================================== */
+
+.explore-sections-wrap {
+  padding: 0 80px 64px;
+  max-width: 1280px;
+  margin:auto;
+}
+
+/* Individual topic card */
+.explore-section {
+  padding: 40px;
+  margin-bottom: 24px;
+}
+
+.explore-section:hover {
+  box-shadow: 0 12px 48px rgba(10, 22, 40, 0.1);
+}
+
+/* Card inner layout: image + text (flex row) */
+.explore-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.explore-img-cell {
+  flex: 0 0 auto;
+}
+
+.explore-section img {
+  width: 260px;
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(69, 104, 130, 0.22);
+}
+
+.explore-section:hover img {
+  border-color: rgba(90, 154, 170, 0.55);
+}
+
+.explore-content h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #0a1628;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.explore-content p {
+  font-size: 0.92rem;
+  color: #456882;
+  line-height: 1.75;
+  margin: 0 0 12px;
+}
+
+.explore-content .btn {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  padding: 10px 22px;
+}
+
+/* Video block at bottom of explore page */
+.video-section-explore {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px 80px;
+}
+
+.video-section-explore h2 {
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #0a1628;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.video-desc {
+  font-size: 0.92rem;
+  color: #456882;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 560px;
+}

@@ -1,0 +1,137 @@
+/* ===========================================================
+   THREATS PAGE — intro, threat cards grid, services cards
+   =========================================================== */
+
+.threats-section {
+  padding: 48px 80px 64px;
+  max-width: 1280px;
+  margin: auto;
+  width: 100%;
+}
+
+/* Intro: heading + description side by side */
+.threats-intro {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.threats-intro-heading {
+  flex: 0 1 380px;
+}
+
+.threats-intro-body {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+/* Two-column threat card grid */
+.threats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Individual threat card with hover image panel */
+.threat-card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(69, 104, 130, 0.22);
+  border-radius: 16px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  min-height: 200px;
+}
+
+
+
+.threat-card:hover,
+.threat-card:focus-within {
+  border-color: rgba(90, 154, 170, 0.55);
+  box-shadow: 0 12px 48px rgba(10, 22, 40, 0.1);
+}
+
+.threat-card:hover::before,
+.threat-card:focus-within::before {
+  opacity: 1;
+}
+
+.threat-card-front {
+  position: relative;
+}
+
+.threat-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #348787;
+  background: rgba(90, 154, 170, 0.1);
+  border: 1px solid rgba(90, 154, 170, 0.25);
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 16px;
+}
+
+.threat-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #0a1628;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.threat-desc {
+  font-size: 0.88rem;
+  color: #456882;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Hover overlay with image */
+.threat-hover-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(234, 239, 239, 0.96);
+  backdrop-filter: blur(12px);
+  visibility: hidden;
+}
+
+.threat-hover-visual {
+  border-radius: 12px;
+  border: 1px solid rgba(90, 154, 170, 0.35);
+  width: 100%;
+}
+
+.threat-hover-visual img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.threat-card:hover .threat-hover-panel,
+.threat-card:focus-within .threat-hover-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.threat-card:hover .threat-hover-visual img,
+.threat-card:focus-within .threat-hover-visual img {
+  opacity: 1;
+}
+
+/* Services card grid spacing on threats page */
+.threats-section + .services {
+  padding-top: 0;
+}
+

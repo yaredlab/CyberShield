@@ -1,0 +1,24 @@
+
+/* ================================================================
+   17. DARK MODE — ABOUT PAGE
+   ================================================================ */
+html.dark-mode .about-section .section-heading {
+  color: #d8e4f0;
+}
+
+html.dark-mode .about-section .section-body {
+  color: #6a90a8;
+}
+
+/* Team name list */
+html.dark-mode .team-name {
+  color: #d0dae8;
+}
+
+html.dark-mode .team-id {
+  color: #d0dae8;
+}
+
+html.dark-mode .team-row {
+  border-color: rgba(0, 212, 255, 0.10);
+}

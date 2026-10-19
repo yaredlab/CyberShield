@@ -1,0 +1,48 @@
+
+/* ================================================================
+   13. DARK MODE — THREATS PAGE
+   ================================================================ */
+
+/* Individual threat cards */
+html.dark-mode .threat-card {
+  background:   rgba(6, 13, 30, 0.75);
+  border-color: rgba(0, 212, 255, 0.10);
+}
+
+html.dark-mode .threat-card:hover,
+html.dark-mode .threat-card:focus-within {
+  border-color: rgba(0, 212, 255, 0.35);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 212, 255, 0.10),
+    0 0 20px rgba(0, 212, 255, 0.08);
+}
+
+/* Threat badge / label */
+html.dark-mode .threat-label {
+  color:        #00d4ff;
+  background:   rgba(0, 212, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.22);
+}
+
+/* Threat card title */
+html.dark-mode .threat-name {
+  color: #d8e4f0;
+}
+
+/* Threat card description */
+html.dark-mode .threat-desc {
+  color: #6a90a8;
+}
+
+/* Hover image overlay panel */
+html.dark-mode .threat-hover-panel {
+  background:      rgba(6, 13, 30, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+html.dark-mode .threat-hover-visual {
+  border-color: rgba(0, 212, 255, 0.22);
+  box-shadow:   0 0 20px rgba(0, 212, 255, 0.12);
+}

@@ -1,0 +1,545 @@
+/* ================================================================
+   1. GLOBAL SMOOTH TRANSITIONS
+   Applied to all elements so color/bg changes animate elegantly.
+   ================================================================ */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.40s ease,
+    background      0.40s ease,
+    color            0.35s ease,
+    border-color     0.35s ease,
+    box-shadow       0.40s ease,
+    opacity          0.35s ease;
+}
+
+/* Exclude transitions from the overlay (it uses its own) */
+.dm-overlay,
+.dm-overlay * {
+  transition: opacity 0.22s ease !important;
+}
+
+/* Exclude transitions from SVG animation elements */
+.dm-toggle-btn .dm-thumb {
+  transition:
+    transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease !important;
+}
+
+
+/* ================================================================
+   2. CINEMATIC TRANSITION OVERLAY
+   A brief dark-to-transparent or transparent-to-dark flash that
+   masks the exact moment of theme swap for a premium feel.
+   ================================================================ */
+.dm-overlay {
+  position: fixed;
+  inset: 0;                        /* cover entire viewport */
+  z-index: 99999;
+  pointer-events: none;            /* never block clicks */
+  background: #060d1a;
+  opacity: 0;
+}
+
+/* Phase: fading IN (before theme swap) */
+.dm-overlay--in {
+  opacity: 0.55;
+  transition: opacity 0.18s ease !important;
+}
+
+/* Phase: fading OUT (after theme swap) */
+.dm-overlay--out {
+  opacity: 0;
+  transition: opacity 0.38s ease !important;
+}
+
+
+/* ================================================================
+   3. DARK MODE TOGGLE BUTTON
+   Glassmorphism pill with animated thumb and moon/sun icons.
+   ================================================================ */
+
+/* Outer wrapper — keeps the button from stretching in flex layout */
+.dm-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* The main button element — glassmorphism pill */
+.dm-toggle-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             6px;
+  padding:         7px 14px 7px 10px;
+  border-radius:   100px;
+  border:          1.5px solid rgba(69, 104, 130, 0.30);
+  background:      rgba(191, 201, 209, 0.45);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow:
+    0 2px 12px rgba(10, 22, 40, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  cursor:          pointer;
+  user-select:     none;
+  outline:         none;
+  font-family:     inherit;
+  /* Override the global transition for button itself */
+  transition:
+    background      0.35s ease,
+    border-color    0.35s ease,
+    box-shadow      0.35s ease,
+    transform       0.18s ease !important;
+}
+
+.dm-toggle-btn:hover {
+  background:   rgba(191, 201, 209, 0.70);
+  border-color: rgba(52, 135, 135, 0.45);
+  box-shadow:
+    0 4px 20px rgba(10, 22, 40, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.40);
+  transform: translateY(-1px);
+}
+
+.dm-toggle-btn:active {
+  transform: translateY(0px) scale(0.97);
+}
+
+/* ── Moon icon (shown in LIGHT mode — click to go dark) ── */
+.dm-icon-moon {
+  display:     flex;
+  align-items: center;
+  color:       #456882;
+  opacity:     1;
+  transition:  opacity 0.30s ease, color 0.30s ease !important;
+}
+
+/* ── Sun icon (shown in DARK mode — click to go light) ── */
+.dm-icon-sun {
+  display:     flex;
+  align-items: center;
+  color:       #456882;
+  opacity:     0.45;
+  transition:  opacity 0.30s ease, color 0.30s ease !important;
+}
+
+/* ── Pill track ── */
+.dm-track {
+  position:      relative;
+  width:         34px;
+  height:        18px;
+  border-radius: 100px;
+  background:    rgba(10, 22, 40, 0.14);
+  border:        1px solid rgba(69, 104, 130, 0.22);
+  flex-shrink:   0;
+  transition:    background 0.35s ease, border-color 0.35s ease !important;
+}
+
+/* ── Sliding thumb ── */
+.dm-thumb {
+  position:      absolute;
+  top:           2px;
+  left:          2px;
+  width:         12px;
+  height:        12px;
+  border-radius: 50%;
+  background:    #456882;
+  box-shadow:    0 1px 4px rgba(10, 22, 40, 0.25);
+  transform:     translateX(0);
+  /* Spring-like bounce animation handled in global * rule above */
+}
+
+/* ────────────────────────────────────────────────────────
+   TOGGLE DARK STATE — when .dm-is-dark is on the button
+   (dark mode is currently ON)
+────────────────────────────────────────────────────────── */
+
+/* Button shell transforms to neon cyan glassmorphism */
+.dm-toggle-btn.dm-is-dark {
+  background:   rgba(0, 212, 255, 0.10);
+  border-color: rgba(0, 212, 255, 0.40);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(0, 212, 255, 0.15);
+}
+
+.dm-toggle-btn.dm-is-dark:hover {
+  background:   rgba(0, 212, 255, 0.18);
+  border-color: rgba(0, 212, 255, 0.65);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(0, 212, 255, 0.20);
+}
+
+/* Thumb slides to the right in dark mode */
+.dm-toggle-btn.dm-is-dark .dm-thumb {
+  transform:     translateX(16px);
+  background:    #00d4ff;
+  box-shadow:    0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Track glows cyan in dark mode */
+.dm-toggle-btn.dm-is-dark .dm-track {
+  background:   rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.30);
+}
+
+/* Moon icon fades out in dark mode */
+.dm-toggle-btn.dm-is-dark .dm-icon-moon {
+  opacity: 0.40;
+  color:   rgba(0, 212, 255, 0.60);
+}
+
+/* Sun icon glows in dark mode */
+.dm-toggle-btn.dm-is-dark .dm-icon-sun {
+  opacity: 1;
+  color:   #00d4ff;
+}
+
+/* SVG icons subtle rotation on state change */
+.dm-svg-moon,
+.dm-svg-sun {
+  transition: transform 0.45s ease, color 0.30s ease !important;
+}
+
+.dm-toggle-btn.dm-is-dark .dm-svg-moon {
+  transform: rotate(-20deg);
+}
+
+.dm-toggle-btn.dm-is-dark .dm-svg-sun {
+  transform: rotate(40deg);
+}
+
+
+/* ================================================================
+   4. DARK MODE — BODY & BACKGROUND
+   Deep navy/black cyber background with subtle grid texture.
+   ================================================================ */
+html.dark-mode body {
+  background: #060d1a;
+  color:      #d0dae8;
+}
+
+
+/* ================================================================
+   5. DARK MODE — NAVIGATION
+   Deep glass navbar with neon cyan accent.
+   ================================================================ */
+html.dark-mode nav {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: rgba(255, 255, 255, 0.4) 1px 1px 1px 0px inset, rgba(255, 255, 255, 0.2) -1px -1px 1px 0px inset;
+  border-radius: 50vw;
+}
+
+/* Brand logo */
+html.dark-mode .nav-logo {
+  color: rgba(224, 232, 240, 0.92);
+}
+
+html.dark-mode .nav-logo:hover {
+  color: #00d4ff;
+}
+
+/* Nav link items */
+html.dark-mode .nav-links a {
+  color: #6a90a8;
+}
+
+html.dark-mode .nav-links a:hover {
+  color:      #d0dae8;
+  background: rgba(0, 212, 255, 0.08);
+}
+
+html.dark-mode .nav-links a.active {
+  color:      #00d4ff;
+  background: rgba(0, 212, 255, 0.10);
+  font-weight: 700;
+}
+
+/* "Get Protected" CTA button in dark mode */
+html.dark-mode .nav-cta {
+  background:   rgba(0, 212, 255, 0.10);
+  color:        #00d4ff;
+  border:       1px solid rgba(0, 212, 255, 0.28);
+  box-shadow:   none;
+}
+
+html.dark-mode .nav-cta:hover {
+  background:   rgba(0, 212, 255, 0.22);
+  color:        #ffffff;
+  border-color: rgba(0, 212, 255, 0.55);
+  box-shadow:   none;
+}
+
+
+/* ================================================================
+   6. DARK MODE — BUTTONS (primary, ghost, submit)
+   All buttons convert to neon-bordered glassmorphism style.
+   ================================================================ */
+
+/* Primary buttons */
+html.dark-mode .btn-primary {
+  background:   rgba(0, 212, 255, 0.10);
+  color:        #00d4ff;
+  border:       1.5px solid rgba(0, 212, 255, 0.28);
+  box-shadow:   none;
+}
+
+html.dark-mode .btn-primary:hover {
+  background:   rgba(0, 212, 255, 0.22);
+  color:        #ffffff;
+  border-color: rgba(0, 212, 255, 0.55);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.40);
+  transform: translateY(-2px);
+}
+
+/* Ghost buttons */
+html.dark-mode .btn-ghost {
+  background:   transparent;
+  color:        #6a90a8;
+  border-color: rgba(0, 212, 255, 0.20);
+}
+
+html.dark-mode .btn-ghost:hover {
+  background:   rgba(0, 212, 255, 0.10);
+  color:        #00d4ff;
+  border-color: rgba(0, 212, 255, 0.45);
+  box-shadow:   none;
+  transform: translateY(-2px);
+}
+
+/* Contact form submit button */
+html.dark-mode .btn-submit {
+  background:   rgba(0, 212, 255, 0.12);
+  color:        #00d4ff;
+  border:       1.5px solid rgba(0, 212, 255, 0.28);
+}
+
+html.dark-mode .btn-submit:hover {
+  background:   rgba(0, 212, 255, 0.24);
+  color:        #ffffff;
+  border-color: rgba(0, 212, 255, 0.55);
+  box-shadow:   none;
+}
+
+
+/* ================================================================
+   7. DARK MODE — GLASS & GENERIC CARDS
+   ================================================================ */
+
+/* .glass utility class */
+html.dark-mode .glass {
+  background:      rgba(0, 212, 255, 0.03);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-color:    rgba(0, 212, 255, 0.12);
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 212, 255, 0.04),
+    inset 0 1px 0 rgba(0, 212, 255, 0.08);
+}
+
+html.dark-mode .glass:hover,
+html.dark-mode .glass:focus-within {
+  border-color: rgba(0, 212, 255, 0.22);
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 212, 255, 0.08),
+    inset 0 1px 0 rgba(0, 212, 255, 0.12);
+}
+
+/* .card utility class */
+html.dark-mode .card {
+  background:  rgba(10, 22, 40, 0.55);
+  border:      1px solid rgba(0, 212, 255, 0.08);
+  box-shadow:  0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+html.dark-mode .card:hover,
+html.dark-mode .card:focus-within {
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 212, 255, 0.10);
+}
+
+/* Services grid cards (threats & tips pages) */
+html.dark-mode .services .card {
+  background:   rgba(10, 22, 40, 0.60);
+  border:       1px solid rgba(0, 212, 255, 0.08);
+}
+
+html.dark-mode .services .card h1 {
+  color: #00d4ff;
+}
+
+html.dark-mode .services .card h3 {
+  color: #d0dae8;
+}
+
+html.dark-mode .services .card p {
+  color: #6a90a8;
+}
+
+
+/* ================================================================
+   8. DARK MODE — TYPOGRAPHY
+   Headings glow softly; body text stays highly readable.
+   ================================================================ */
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4 {
+  color: #d8e4f0;
+}
+
+html.dark-mode p {
+  color: #6a90a8;
+}
+
+html.dark-mode .section-heading {
+  color: #d8e4f0;
+}
+
+html.dark-mode .section-body {
+  color: #6a90a8;
+}
+
+
+/* ================================================================
+   9. DARK MODE — HERO SECTION (index.html)
+   ================================================================ */
+
+/* Subtle radial glow behind hero */
+html.dark-mode .hero {
+  background: none;
+}
+
+html.dark-mode .hero h1 {
+  color: #d8e4f0;
+}
+
+html.dark-mode .hero h1 em {
+  color: #00d4ff;
+  text-shadow: none;
+}
+
+html.dark-mode .hero-sub {
+  color: #6a90a8;
+}
+
+
+/* ================================================================
+   10. DARK MODE — BANNER-SUB (index.html)
+   ================================================================ */
+html.dark-mode .banner-sub {
+  color: #6a90a8;
+}
+
+html.dark-mode .banner-sub h2 {
+  color: #d8e4f0;
+}
+
+html.dark-mode .banner-sub p {
+  color: #6a90a8;
+}
+
+
+/* ================================================================
+   11. DARK MODE — IMAGE CONTAINER & TEXT OVERLAY (index.html)
+   ================================================================ */
+html.dark-mode .image-container img {
+  filter: brightness(0.75) saturate(0.85);
+}
+
+html.dark-mode .text-overlay {
+  color: #d0dae8;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.80);
+}
+
+html.dark-mode .text-overlay:hover {
+  color: rgba(0, 212, 255, 0.85);
+}
+
+
+/* ================================================================
+   12. DARK MODE — PAGE HERO HEADER (all inner pages)
+   Large centred heading + subtext on each page.
+   ================================================================ */
+html.dark-mode .page-hero h1 {
+  color:      #d8e4f0;
+  text-shadow: none;
+}
+
+html.dark-mode .page-hero p {
+  color: #6a90a8;
+}
+
+
+
+/* ================================================================
+   18. DARK MODE — FOOTER
+   Stays very dark — just accent colors shift to cyan.
+   ================================================================ */
+html.dark-mode .site-footer {
+  background:   #020810;
+  border-color: rgba(0, 212, 255, 0.10);
+  box-shadow:   inset 0 1px 0 rgba(0, 212, 255, 0.08);
+}
+
+html.dark-mode .site-footer-logo {
+  color: #d0dae8;
+}
+
+html.dark-mode .site-footer-logo:hover {
+  color: #00d4ff;
+}
+
+html.dark-mode .site-footer-tagline {
+  color: #3a5a6e;
+}
+
+html.dark-mode .site-footer-heading {
+  color: #7aa0ba;
+}
+
+html.dark-mode .site-footer-col a {
+  color: #3a5a6e;
+}
+
+html.dark-mode .site-footer-col a:hover {
+  color: #00d4ff;
+}
+
+html.dark-mode .site-footer-bottom {
+  border-color: rgba(0, 212, 255, 0.08);
+}
+
+html.dark-mode .site-footer-bottom p {
+  color: #2a4a5e;
+}
+
+
+/* ================================================================
+   19. DARK MODE — VIDEO SECTIONS
+   ================================================================ */
+html.dark-mode .video-section h2,
+html.dark-mode .video-section-explore h2 {
+  color: #d8e4f0;
+}
+
+html.dark-mode .video-wrapper {
+  border-color: rgba(0, 212, 255, 0.14);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 212, 255, 0.06);
+}
+
+html.dark-mode video {
+  filter: brightness(0.92) saturate(0.90);
+}

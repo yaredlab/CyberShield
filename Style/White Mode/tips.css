@@ -1,0 +1,164 @@
+/* ===========================================================
+   TIPS PAGE — highlight cards, detail rows, checklist, video
+   =========================================================== */
+
+/* Top highlight cards (shared .services grid from style.css) */
+
+
+.tips-details {
+  padding: 0 80px 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Detail card: image + text row */
+.tip-detail {
+  padding: 40px;
+}
+
+.tip-detail:hover {
+  box-shadow: 0 12px 40px rgba(10, 22, 40, 0.1);
+}
+
+.tip-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.tip-detail-img-cell {
+  flex: 0 0 auto;
+}
+
+.tip-detail img {
+  width: 220px;
+  max-width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(69, 104, 130, 0.22);
+}
+
+.tip-detail:hover img {
+  border-color: rgba(90, 154, 170, 0.55);
+}
+
+.tip-detail-text-cell {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.tip-detail-content h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #0a1628;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.tip-detail-content p {
+  font-size: 0.9rem;
+  color: #456882;
+  line-height: 1.75;
+  margin: 0 0 12px;
+}
+
+/* Daily safety checklist card */
+.checklist-wrap {
+  padding: 0 80px 48px;
+  max-width: 1280px;
+  margin: auto;
+  width: 100%;
+}
+
+.checklist {
+  padding: 48px 56px;
+}
+
+.checklist h2 {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #0a1628;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.checklist-sub {
+  font-size: 0.88rem;
+  color: #456882;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+/* Checklist items — div-based rows */
+.checklist-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px solid transparent;
+}
+
+.checklist-item:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(69, 104, 130, 0.22);
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: #348787;
+  cursor: pointer;
+}
+
+.checklist-item label {
+  font-size: 0.92rem;
+  color: #456882;
+  cursor: pointer;
+}
+
+.checklist-item:hover label {
+  color: #0a1628;
+}
+
+/* Video section */
+.tips-video-wrap {
+  padding: 0 80px 80px;
+  max-width: 1280px;
+  margin:auto;
+  width: 100%;
+}
+
+.tips-video-wrap h2 {
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #0a1628;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.tips-video-wrap .video-desc {
+  font-size: 0.92rem;
+  color: #456882;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 560px;
+}
+

@@ -1,0 +1,36 @@
+
+
+/* ================================================================
+   14. DARK MODE — EXPLORE PAGE
+   ================================================================ */
+html.dark-mode .explore-section {
+  background:      rgba(6, 13, 30, 0.65);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-color:    rgba(0, 212, 255, 0.10);
+}
+
+html.dark-mode .explore-section:hover {
+  border-color: rgba(0, 212, 255, 0.22);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.50),
+    0 0 0 1px rgba(0, 212, 255, 0.08);
+}
+
+html.dark-mode .explore-content h2 {
+  color: #d8e4f0;
+}
+
+html.dark-mode .explore-content p {
+  color: #6a90a8;
+}
+
+/* Video section heading on explore page */
+html.dark-mode .video-section-explore h2 {
+  color: #d8e4f0;
+}
+
+html.dark-mode .video-section-explore .video-desc {
+  color: #6a90a8;
+}
+
