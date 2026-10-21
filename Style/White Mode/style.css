@@ -91,6 +91,27 @@ ul {
   padding: 0; 
 }
 
+/* Accessibility: Skip to Main Content Link */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 20px;
+  background: #0a1628;
+  color: #00f2fe;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 99999;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
 
 
 
