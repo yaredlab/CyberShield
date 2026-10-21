@@ -52,6 +52,9 @@
 
     // 10. Interactive Floating Back to Top Button
     initBackToTop(lenis);
+
+    // 11. Daily Safety Checklist Interactive Tracker
+    initChecklistTracker();
   }
 
   /* ──────────────────────────────────────────────────────────────
@@ -504,6 +507,50 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+  }
+
+  /* ──────────────────────────────────────────────────────────────
+     11. DAILY SAFETY CHECKLIST INTERACTIVE TRACKER
+  ────────────────────────────────────────────────────────────── */
+  function initChecklistTracker() {
+    var checkboxes = document.querySelectorAll('.checklist-items input[type="checkbox"]');
+    var countText = document.getElementById('checklist-count-text');
+    var pctText = document.getElementById('checklist-pct-text');
+    var fillBar = document.getElementById('checklist-progress-fill');
+
+    if (!checkboxes.length || !countText || !fillBar) return;
+
+    var total = checkboxes.length;
+
+    // Load saved states from localStorage
+    checkboxes.forEach(function (cb, idx) {
+      var saved = localStorage.getItem('cybershield-check-' + idx);
+      if (saved === 'true') {
+        cb.checked = true;
+      }
+      cb.addEventListener('change', function () {
+        localStorage.setItem('cybershield-check-' + idx, cb.checked);
+        updateProgress();
+      });
+    });
+
+    function updateProgress() {
+      var checkedCount = 0;
+      checkboxes.forEach(function (cb) {
+        if (cb.checked) checkedCount++;
+      });
+
+      var pct = Math.round((checkedCount / total) * 100);
+      countText.textContent = checkedCount + ' of ' + total + ' habits completed';
+      if (pctText) pctText.textContent = pct + '%';
+      fillBar.style.width = pct + '%';
+
+      if (pct === 100) {
+        countText.textContent = '🎉 All habits verified! Outstanding protection.';
+      }
+    }
+
+    updateProgress();
   }
 
 })();
