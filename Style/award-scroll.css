@@ -485,6 +485,57 @@ html.dark-mode .cyber-card-link:hover {
   color: #ffffff;
 }
 
+/* ── Floating Back to Top Button ── */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(69, 104, 130, 0.25);
+  color: #348787;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.12);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #2c3947;
+  color: #00f2fe;
+  border-color: #348787;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 242, 254, 0.2);
+}
+
+html.dark-mode .back-to-top {
+  background: rgba(16, 28, 45, 0.75);
+  border-color: rgba(0, 242, 254, 0.25);
+  color: #00f2fe;
+}
+
+html.dark-mode .back-to-top:hover {
+  background: #00f2fe;
+  color: #0a1628;
+  border-color: #00f2fe;
+}
+
 /* ── Responsive Adjustments ── */
 @media (max-width: 1024px) {
   .cyber-stats-grid {

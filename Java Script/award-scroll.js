@@ -49,6 +49,9 @@
 
     // 9. Smooth Scroll-Down Cue Action
     initScrollCue(lenis);
+
+    // 10. Interactive Floating Back to Top Button
+    initBackToTop(lenis);
   }
 
   /* ──────────────────────────────────────────────────────────────
@@ -471,6 +474,34 @@
         } else {
           nextTarget.scrollIntoView({ behavior: 'smooth' });
         }
+      }
+    });
+  }
+
+  /* ──────────────────────────────────────────────────────────────
+     10. FLOATING BACK TO TOP BUTTON
+  ────────────────────────────────────────────────────────────── */
+  function initBackToTop(lenis) {
+    var btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.setAttribute('title', 'Back to top');
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 380) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', function () {
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.5 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
   }
