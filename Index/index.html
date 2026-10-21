@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../Style/White Mode/style.css">
   <link rel="stylesheet" href="../Style/White Mode/index.css">
   <link rel="stylesheet" href="../Style/Dark Mode/darkmode.css">
+  <link rel="stylesheet" href="../Style/award-scroll.css">
   <!-- darkmode.js MUST be in <head> so dark class is applied before first paint -->
   <script src="../Java Script/darkmode.js"></script>
   <script src="../Java Script/Effectt.js"></script>
@@ -38,6 +39,10 @@
 
       <div class="hero" id="home">
         <div class="hero-inner">
+          <div class="cyber-badge">
+            <span class="cyber-badge-dot"></span>
+            <span>CyberShield Protocol // Active Defense</span>
+          </div>
           <div class="hero-grid">
             <div class="hero-text">
               <h1>
@@ -58,6 +63,32 @@
             <a class="btn btn-primary" href="explore.html">Explore Threats</a>
             <a class="btn btn-primary" href="tips.html">Safety Tips</a>
           </div>
+          <div class="scroll-cue" role="button" aria-label="Scroll down to explore">
+            <div class="scroll-cue-mouse">
+              <div class="scroll-cue-wheel"></div>
+            </div>
+            <span>Scroll Down To Explore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Stats HUD Counter Grid -->
+      <div id="stats-overview" class="cyber-stats-grid">
+        <div class="cyber-stat-card">
+          <div class="cyber-stat-number" data-target="99.9" data-suffix="%" data-decimals="1">0<em>%</em></div>
+          <div class="cyber-stat-label">Real-Time Threat Deflection</div>
+        </div>
+        <div class="cyber-stat-card">
+          <div class="cyber-stat-number" data-target="24" data-suffix="/7" data-decimals="0">0<em>/7</em></div>
+          <div class="cyber-stat-label">Continuous Monitoring</div>
+        </div>
+        <div class="cyber-stat-card">
+          <div class="cyber-stat-number" data-target="100" data-suffix="%" data-decimals="0">0<em>%</em></div>
+          <div class="cyber-stat-label">User Privacy Shield</div>
+        </div>
+        <div class="cyber-stat-card">
+          <div class="cyber-stat-number" data-target="0" data-suffix=" Breach" data-decimals="0">0<em> Breach</em></div>
+          <div class="cyber-stat-label">Zero-Tolerance Defense</div>
         </div>
       </div>
 
@@ -76,6 +107,51 @@
           Cyber safety is for everyone — students, teachers, professionals, and family members. Stay alert, think before you click, and follow basic safety rules to enjoy the online world securely.
         </p>
       </div>
+
+      <!-- Interactive Safety Modules Showcase -->
+      <section class="cyber-features-section">
+        <div class="cyber-features-heading">
+          <h2>Interactive Safety Modules</h2>
+          <p>Explore structured knowledge tracks designed to empower your digital awareness.</p>
+        </div>
+        <div class="cyber-cards-trio">
+          <div class="cyber-show-card">
+            <div class="cyber-card-visual">
+              <img src="../Image/011_In_a_futuristic_3D_style_a_humanoid_robot_stands_yp87Zlqk.png" alt="Phishing Intelligence">
+            </div>
+            <div>
+              <div class="cyber-card-meta">Track 01 · Threat Defense</div>
+              <div class="cyber-card-title">Phishing &amp; Scams</div>
+              <p class="cyber-card-body">Learn to detect counterfeit emails, fraudulent domains, and deceptive links before compromise happens.</p>
+            </div>
+            <a class="cyber-card-link" href="threats.html">Explore Threats &rarr;</a>
+          </div>
+
+          <div class="cyber-show-card">
+            <div class="cyber-card-visual">
+              <img src="../Image/006_In_a_futuristic_digital_art_style_a_metallic_H12N-Y0j.png" alt="Identity Protection">
+            </div>
+            <div>
+              <div class="cyber-card-meta">Track 02 · Identity Safety</div>
+              <div class="cyber-card-title">Biometrics &amp; Passwords</div>
+              <p class="cyber-card-body">Adopt modern authentication architectures, password managers, and multi-factor defense practices.</p>
+            </div>
+            <a class="cyber-card-link" href="tips.html">View Safety Tips &rarr;</a>
+          </div>
+
+          <div class="cyber-show-card">
+            <div class="cyber-card-visual">
+              <img src="../Image/017_A_robotic_hand_emits_a_bright_blue_energy_beam_ptoy2JbY.png" alt="Data Integrity">
+            </div>
+            <div>
+              <div class="cyber-card-meta">Track 03 · Network Shield</div>
+              <div class="cyber-card-title">Malware &amp; Wi-Fi Safety</div>
+              <p class="cyber-card-body">Guard your endpoint devices against payload injections, ransomware lockdowns, and public network snooping.</p>
+            </div>
+            <a class="cyber-card-link" href="explore.html">Deep-Dive Topics &rarr;</a>
+          </div>
+        </div>
+      </section>
 
       <div class="image-container">
         <img src="../Image/016_A_sleek_silver_android_with_glowing_blue_chest_JbZdBiXe.png" alt="Cyber security monitoring center">
@@ -121,5 +197,10 @@
     </div>
   </div>
 
+  <!-- GSAP, ScrollTrigger, Lenis Smooth Scroll & Award-Winning Animation Engine -->
+  <script src="../Java Script/vendor/gsap.min.js"></script>
+  <script src="../Java Script/vendor/ScrollTrigger.min.js"></script>
+  <script src="../Java Script/vendor/lenis.min.js"></script>
+  <script src="../Java Script/award-scroll.js"></script>
 </body>
 </html>

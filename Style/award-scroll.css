@@ -1,0 +1,517 @@
+/* ==========================================================================
+   AWARD-WINNING GSAP & SCROLL EXPERIENCE — CyberShield
+   Cinematic · Smooth Scroll · 3D Parallax · Cyber HUD Elements
+   ========================================================================== */
+
+/* ── Smooth Scroll Base ── */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ── Top Scroll Progress Bar ── */
+.scroll-progress-hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #348787 0%, #00f2fe 50%, #4facfe 100%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.7);
+}
+
+/* ── Cybernetic Custom Cursor Follower (Desktop only) ── */
+@media (hover: hover) and (pointer: fine) {
+  .cyber-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: #00f2fe;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #00f2fe, 0 0 20px rgba(0, 242, 254, 0.5);
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.25s ease;
+  }
+
+  .cyber-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(52, 135, 135, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                background 0.25s ease;
+  }
+
+  .cyber-cursor-active .cyber-cursor-dot {
+    width: 14px;
+    height: 14px;
+    background: #4facfe;
+    box-shadow: 0 0 16px #4facfe;
+  }
+
+  .cyber-cursor-active .cyber-cursor-ring {
+    width: 54px;
+    height: 54px;
+    border-color: rgba(0, 242, 254, 0.85);
+    background: rgba(0, 242, 254, 0.08);
+    backdrop-filter: blur(1px);
+  }
+}
+
+@media (hover: none) or (pointer: coarse) {
+  .cyber-cursor-dot,
+  .cyber-cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ── Hero Cyber Badge ── */
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(52, 135, 135, 0.12);
+  border: 1px solid rgba(52, 135, 135, 0.35);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #348787;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(52, 135, 135, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.cyber-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f2fe;
+  box-shadow: 0 0 8px #00f2fe;
+  animation: cyberPulse 2s infinite ease-in-out;
+}
+
+@keyframes cyberPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+}
+
+/* ── Animated Scroll Down Cue ── */
+.scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 48px auto 0;
+  color: #456882;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-cue:hover {
+  color: #348787;
+  transform: translateY(3px);
+}
+
+.scroll-cue-mouse {
+  width: 22px;
+  height: 34px;
+  border: 2px solid rgba(69, 104, 130, 0.4);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-cue-wheel {
+  width: 3px;
+  height: 7px;
+  background: #348787;
+  border-radius: 2px;
+  margin-top: 5px;
+  animation: scrollWheel 2s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  60% { transform: translateY(12px); opacity: 0; }
+  61% { transform: translateY(0); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Live Stats Counter Grid ── */
+.cyber-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1280px;
+  margin: 60px auto 40px;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+.cyber-stat-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(69, 104, 130, 0.18);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+}
+
+.cyber-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #348787, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cyber-stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(52, 135, 135, 0.4);
+  box-shadow: 0 16px 36px rgba(10, 22, 40, 0.08);
+}
+
+.cyber-stat-card:hover::before {
+  opacity: 1;
+}
+
+.cyber-stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #0a1628;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cyber-stat-number em {
+  font-style: normal;
+  color: #348787;
+}
+
+.cyber-stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #456882;
+  letter-spacing: 0.02em;
+}
+
+/* ── Interactive Features Showcase ── */
+.cyber-features-section {
+  max-width: 1280px;
+  margin: 60px auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+.cyber-features-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cyber-features-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0a1628;
+  margin-bottom: 12px;
+}
+
+.cyber-features-heading p {
+  color: #456882;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.cyber-cards-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.cyber-show-card {
+  position: relative;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(69, 104, 130, 0.2);
+  padding: 32px 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+}
+
+.cyber-show-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 48px rgba(10, 22, 40, 0.12);
+  border-color: rgba(52, 135, 135, 0.45);
+}
+
+.cyber-card-visual {
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.cyber-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-show-card:hover .cyber-card-visual img {
+  transform: scale(1.08);
+}
+
+.cyber-card-meta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #348787;
+  margin-bottom: 8px;
+}
+
+.cyber-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0a1628;
+  margin-bottom: 12px;
+}
+
+.cyber-card-body {
+  font-size: 0.92rem;
+  color: #456882;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cyber-card-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #348787;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.cyber-card-link:hover {
+  gap: 10px;
+  color: #0a1628;
+}
+
+/* ── Hero Media Floating & Glow ── */
+.hero-media img {
+  box-shadow: 0 20px 48px rgba(10, 22, 40, 0.15);
+  border: 1px solid rgba(69, 104, 130, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── Parallax Image Container ── */
+.image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container img {
+  will-change: transform;
+  transform: scale(1.15);
+}
+
+.text-overlay {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease;
+}
+
+.text-overlay:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+/* ── Dark Mode Adaptations ── */
+html.dark-mode .scroll-progress-hud {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+html.dark-mode .scroll-progress-bar {
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #00f2fe 100%);
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.9);
+}
+
+html.dark-mode .cyber-badge {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: rgba(0, 242, 254, 0.35);
+  color: #00f2fe;
+}
+
+html.dark-mode .scroll-cue {
+  color: #8da4be;
+}
+
+html.dark-mode .scroll-cue:hover {
+  color: #00f2fe;
+}
+
+html.dark-mode .scroll-cue-mouse {
+  border-color: rgba(141, 164, 190, 0.4);
+}
+
+html.dark-mode .scroll-cue-wheel {
+  background: #00f2fe;
+}
+
+html.dark-mode .cyber-stat-card {
+  background: rgba(16, 28, 45, 0.65);
+  border-color: rgba(0, 242, 254, 0.16);
+}
+
+html.dark-mode .cyber-stat-card:hover {
+  border-color: rgba(0, 242, 254, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.12);
+}
+
+html.dark-mode .cyber-stat-number {
+  color: #f0f6fc;
+}
+
+html.dark-mode .cyber-stat-number em {
+  color: #00f2fe;
+}
+
+html.dark-mode .cyber-stat-label {
+  color: #8da4be;
+}
+
+html.dark-mode .cyber-features-heading h2 {
+  color: #f0f6fc;
+}
+
+html.dark-mode .cyber-features-heading p {
+  color: #8da4be;
+}
+
+html.dark-mode .cyber-show-card {
+  background: rgba(16, 28, 45, 0.65);
+  border-color: rgba(0, 242, 254, 0.16);
+}
+
+html.dark-mode .cyber-show-card:hover {
+  border-color: rgba(0, 242, 254, 0.45);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 242, 254, 0.15);
+}
+
+html.dark-mode .cyber-card-meta {
+  color: #00f2fe;
+}
+
+html.dark-mode .cyber-card-title {
+  color: #f0f6fc;
+}
+
+html.dark-mode .cyber-card-body {
+  color: #8da4be;
+}
+
+html.dark-mode .cyber-card-link {
+  color: #00f2fe;
+}
+
+html.dark-mode .cyber-card-link:hover {
+  color: #ffffff;
+}
+
+/* ── Responsive Adjustments ── */
+@media (max-width: 1024px) {
+  .cyber-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 40px;
+  }
+  .cyber-features-section {
+    padding: 0 40px;
+  }
+  .cyber-cards-trio {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cyber-stats-grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    margin: 40px auto 20px;
+  }
+  .cyber-features-section {
+    padding: 0 24px;
+  }
+  .cyber-stat-number {
+    font-size: 2.2rem;
+  }
+  .cyber-features-heading h2 {
+    font-size: 1.8rem;
+  }
+}
