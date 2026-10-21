@@ -134,12 +134,20 @@ nav {
   width: calc(100% - 80px);
   max-width: 1280px;
   background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: rgba(255, 255, 255, 0.4) 1px 1px 1px 0px inset, rgba(255, 255, 255, 0.2) -1px -1px 1px 0px inset;
   border-radius: 50vw;
   padding: 14px 32px;
   z-index: 200;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+  border-color: rgba(52, 135, 135, 0.4);
+  box-shadow: 0 12px 32px rgba(10, 22, 40, 0.08), rgba(255, 255, 255, 0.5) 1px 1px 1px 0px inset;
 }
 
 
@@ -187,6 +195,26 @@ nav {
   letter-spacing: 0.04em;
   padding: 8px 14px;
   border-radius: 100px;
+  position: relative;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #348787;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 50%;
 }
 
 .nav-links a:hover {
