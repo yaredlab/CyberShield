@@ -609,6 +609,65 @@ html.dark-mode .checklist-progress-track {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* ── Explore Topic Search ── */
+.explore-filter-bar {
+  max-width: 680px;
+  margin: 0 auto 36px;
+  padding: 0 24px;
+}
+
+.explore-search-shell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(69, 104, 130, 0.22);
+  border-radius: 100px;
+  padding: 12px 24px;
+  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.06);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-search-shell:focus-within {
+  border-color: #348787;
+  box-shadow: 0 12px 32px rgba(52, 135, 135, 0.15);
+}
+
+.explore-search-icon {
+  color: #348787;
+  flex-shrink: 0;
+}
+
+#topic-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #0a1628;
+  width: 100%;
+}
+
+html.dark-mode .explore-search-shell {
+  background: rgba(16, 28, 45, 0.7);
+  border-color: rgba(0, 242, 254, 0.22);
+}
+
+html.dark-mode .explore-search-shell:focus-within {
+  border-color: #00f2fe;
+  box-shadow: 0 12px 32px rgba(0, 242, 254, 0.18);
+}
+
+html.dark-mode .explore-search-icon {
+  color: #00f2fe;
+}
+
+html.dark-mode #topic-search-input {
+  color: #f0f6fc;
+}
+
 /* ── Responsive Adjustments ── */
 @media (max-width: 1024px) {
   .cyber-stats-grid {

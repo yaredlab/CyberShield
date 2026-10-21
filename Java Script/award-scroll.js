@@ -55,6 +55,9 @@
 
     // 11. Daily Safety Checklist Interactive Tracker
     initChecklistTracker();
+
+    // 12. Interactive Topic Search Filter
+    initTopicSearch();
   }
 
   /* ──────────────────────────────────────────────────────────────
@@ -551,6 +554,30 @@
     }
 
     updateProgress();
+  }
+
+  /* ──────────────────────────────────────────────────────────────
+     12. TOPIC SEARCH FILTER (Explore page)
+  ────────────────────────────────────────────────────────────── */
+  function initTopicSearch() {
+    var input = document.getElementById('topic-search-input');
+    var sections = document.querySelectorAll('.explore-section');
+    if (!input || !sections.length) return;
+
+    input.addEventListener('input', function () {
+      var query = input.value.toLowerCase().trim();
+
+      sections.forEach(function (sec) {
+        var text = sec.textContent.toLowerCase();
+        if (!query || text.indexOf(query) !== -1) {
+          sec.style.display = '';
+          sec.style.opacity = '1';
+          sec.style.transform = 'none';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    });
   }
 
 })();
