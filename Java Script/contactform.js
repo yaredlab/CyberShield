@@ -35,9 +35,18 @@ document.addEventListener('DOMContentLoaded', function () {
   var nameInput    = document.getElementById('contact-name');    // Full Name field
   var emailInput   = document.getElementById('contact-email');   // Email field
   var messageInput = document.getElementById('contact-message'); // Message textarea
+  var charCounter  = document.getElementById('char-counter');
 
   /* Safety check — only run on the contact page */
   if (!sendBtn || !nameInput || !emailInput || !messageInput) return;
+
+  /* Live message character counter */
+  if (charCounter) {
+    messageInput.addEventListener('input', function () {
+      var len = messageInput.value.length;
+      charCounter.textContent = len + ' / 500 characters';
+    });
+  }
 
   /* ──────────────────────────────────────────────────────────────
      STEP 2 — LISTEN FOR THE SEND BUTTON CLICK
