@@ -1,7 +1,10 @@
-# CyberShield Security Disclosure Policy (RFC 9116)
+# CyberShield Responsible Disclosure Policy (RFC 9116)
+# Project Repository: https://github.com/yaredlab/CyberShield
+
 Contact: mailto:schemchy27@gmail.com
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://github.com/yaredlab/CyberShield/.well-known/security.txt
 Policy: https://github.com/yaredlab/CyberShield/blob/main/SECURITY.md
 Acknowledgments: https://github.com/yaredlab/CyberShield/graphs/contributors
+Hiring: https://github.com/yaredlab/CyberShield/blob/main/Index/about.html
