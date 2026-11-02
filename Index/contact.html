@@ -2,23 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact CyberShield — Inquire about cybersecurity curricula, digital safety consultations, vulnerability advisories, or academic collaborations.">
+  <meta name="keywords" content="contact CyberShield, cybersecurity questions, internet programming, report security issue, contact team">
+  <meta name="author" content="CyberShield Team">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/yaredlab/CyberShield">
+  <meta property="og:title" content="Contact Us — CyberShield Defense Platform">
+  <meta property="og:description" content="Have questions regarding cyber defense or need digital literacy guidance? Connect with our team.">
+  <meta property="og:image" content="../Image/blue_eyes icon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us — CyberShield Defense Platform">
+  <meta name="twitter:description" content="Have questions regarding cyber defense or need digital literacy guidance? Connect with our team.">
+  <meta name="twitter:image" content="../Image/blue_eyes icon.png">
+
   <title>Contact — CyberShield</title>
   <link rel="icon" type="image/png" href="../Image/blue_eyes icon.png">
+
+  <!-- Critical Resource Preloads -->
+  <link rel="preload" href="../fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../Style/White Mode/style.css">
   <link rel="stylesheet" href="../Style/White Mode/contact.css">
   <link rel="stylesheet" href="../Style/White Mode/contactform.css">
   <link rel="stylesheet" href="../Style/Dark Mode/contact.css">
   <link rel="stylesheet" href="../Style/Dark Mode/darkmode.css">
   <link rel="stylesheet" href="../Style/award-scroll.css">
+
   <script src="../Java Script/darkmode.js"></script>
   <script src="../Java Script/Effectt.js"></script>
-
 </head>
 <body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  
   <div class="page-layout">
-    <div class="page-main">
+    <main class="page-main" id="main-content">
 
       <nav>
         <div class="nav-shell">
@@ -43,23 +67,23 @@
       <header class="page-hero">
         <h1>Get in Touch</h1>
         <p>
-          Have a question about cyber safety?
-          We'd love to hear from you.
+          Have questions regarding cyber safety, curriculum insights, or digital defense?
+          We are here to support your cybersecurity journey.
         </p>
       </header>
 
       <section class="contact-section" id="contact">
         <div class="contact-box">
           <div class="contact-info">
-            <h2 class="section-heading">Have a Question About Cyber Safety?</h2>
+            <h2 class="section-heading">Connect With Our Security Team</h2>
             <p class="section-body">
-              We're here to help. If you have questions about
-              protecting yourself online, send us a message
-              and we'll get back to you as soon as possible.
+              Whether you are seeking guidance on personal online privacy, navigating institutional
+              security practices, or offering project feedback, our academic development team
+              welcomes your inquiries.
             </p>
             <div class="contact-item">
               <div class="contact-icon">Email</div>
-              <div class="contact-text">schemchy27@gmail.com</div>
+              <div class="contact-text"><a href="mailto:schemchy27@gmail.com">schemchy27@gmail.com</a></div>
             </div>
             <div class="contact-item">
               <div class="contact-icon">Class</div>
@@ -71,28 +95,29 @@
             </div>
             <div class="contact-item">
               <div class="contact-icon">Phone</div>
-              <div class="contact-text">+251 90 913 1362</div>
+              <div class="contact-text"><a href="tel:+251909131362">+251 90 913 1362</a></div>
             </div>
           </div>
-          <div class="contact-form">
+
+          <div class="contact-form" role="form" aria-label="CyberShield Inquiry Form">
             <div class="form-group">
               <label for="contact-name">Full Name</label>
-              <input id="contact-name" type="text" placeholder="Enter your full name">
+              <input id="contact-name" type="text" placeholder="Enter your full name" autocomplete="name" required aria-required="true">
             </div>
             <div class="form-group">
               <label for="contact-email">Email Address</label>
-              <input id="contact-email" type="email" placeholder="you@example.com">
+              <input id="contact-email" type="email" placeholder="you@example.com" autocomplete="email" required aria-required="true">
             </div>
             <div class="form-group">
               <label for="contact-message">Message</label>
-              <textarea id="contact-message" placeholder="Ask us anything about cyber safety..."></textarea>
+              <textarea id="contact-message" placeholder="Ask us anything about cyber safety, threat prevention, or digital privacy..." rows="5" required aria-required="true"></textarea>
             </div>
-            <button class="btn-submit" type="button">Send Message</button>
+            <button class="btn-submit" type="button" aria-label="Send message to CyberShield team">Send Message</button>
           </div>
         </div>
       </section>
 
-    </div>
+    </main>
 
     <div class="page-footer-row">
       <footer class="site-footer">
