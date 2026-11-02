@@ -6,7 +6,20 @@
 [![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)](https://greensock.com/gsap/)
 [![Lenis](https://img.shields.io/badge/Lenis-Smooth_Scroll-00f2fe?style=for-the-badge)](https://lenis.darkroom.engineering/)
 
-CyberShield is a cinematic, award-winning educational web platform dedicated to cybersecurity literacy, proactive digital defense, threat mitigation, and online safety practices.
+CyberShield is a cinematic, award-winning educational web platform dedicated to cybersecurity literacy, proactive digital defense, threat mitigation, and online safety practices. Conceived as an academic initiative, the platform equips students, professionals, and digital citizens with actionable habits to withstand modern cyber risks.
+
+---
+
+## 📑 Table of Contents
+
+- [Core Highlights](#-core-highlights)
+- [Educational Curriculum & Tracks](#-educational-curriculum--tracks)
+- [Project Architecture](#-project-architecture)
+- [Quick Start & Local Deployment](#-quick-start--local-deployment)
+- [Accessibility & Standards](#-accessibility--standards)
+- [Authors & Academic Credits](#-authors--academic-credits)
+- [Responsible Disclosure & Security](#-responsible-disclosure--security)
+- [License](#-license)
 
 ---
 
@@ -20,6 +33,17 @@ CyberShield is a cinematic, award-winning educational web platform dedicated to 
 - **Adaptive Dual Theme**: Seamless White Mode and Dark Mode with glassmorphic reflections and neon accents.
 - **Interactive Daily Checklist**: Client-side interactive checklist with automated progress feedback.
 - **Binary Scramble FX**: Cyberpunk-style text hover scramble effect simulating encrypted data streams.
+
+---
+
+## 🛡️ Educational Curriculum & Tracks
+
+CyberShield organizes complex digital defense subjects into structured, digestible learning tracks:
+
+1. **Threat Intelligence ([`threats.html`](Index/threats.html))**: Comprehensive taxonomy covering social engineering schemes, polymorphic malware, credential stuffing, ransomware vectors, and distributed denial-of-service (DDoS) threats.
+2. **Deep-Dive Explorations ([`explore.html`](Index/explore.html))**: Interactive multimedia modules, search filtering by topic, and video demonstrations illustrating defense strategies.
+3. **Safety Checklist & 2FA ([`tips.html`](Index/tips.html))**: Everyday habit tracker, password generator principles, physical hardware shutters, and offline backup best practices (3-2-1 rule).
+4. **Community & Inquiries ([`contact.html`](Index/contact.html))**: Direct communication portal for academic questions, reporting suspicious trends, or requesting cybersecurity guidance.
 
 ---
 
@@ -51,16 +75,37 @@ CyberShield/
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start & Local Deployment
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yaredlab/CyberShield.git
-   cd CyberShield
-   ```
-2. **Launch locally**:
-   - Simply double-click [`Index/index.html`](Index/index.html) in your browser.
-   - Or run with a local development server (e.g., Live Server in VS Code or `npx serve`).
+### 1. Clone the repository
+```bash
+git clone https://github.com/yaredlab/CyberShield.git
+cd CyberShield
+```
+
+### 2. Launch locally
+Choose any of the following lightweight options:
+
+- **Direct Open**: Double-click [`Index/index.html`](Index/index.html) in your browser.
+- **Python Built-in HTTP Server**:
+  ```bash
+  python -m http.server 8000
+  ```
+  Open `http://localhost:8000/Index/index.html` in your browser.
+- **Node.js Local Server**:
+  ```bash
+  npx serve
+  ```
+
+---
+
+## ♿ Accessibility & Standards
+
+CyberShield is committed to universal usability and standards compliance:
+- **WCAG 2.1 AA Compliance**: Clear color contrast ratios across light and dark modes.
+- **Keyboard Navigation**: Interactive focus rings and keyboard-operable elements (`tabindex="0"`).
+- **Accessibility Skip Link**: Dedicated `#main-content` jump link for screen readers.
+- **Zero-FOUT Typography**: Preloaded local font definitions preventing layout shifts.
 
 ---
 
@@ -74,6 +119,12 @@ Developed as part of the **Internet Programming** assignment.
   - Fikreselassie G/Wold (UUR02415/17)
   - Muusa Kadir (UUR00704/17)
   - Natanim Chala (UUR01397/17)
+
+---
+
+## 🔒 Responsible Disclosure & Security
+
+Security and responsible disclosure are central to our values. For vulnerability reports, review our [Security Policy](SECURITY.md) or standard machine-readable declaration at [`.well-known/security.txt`](.well-known/security.txt).
 
 ---
 
