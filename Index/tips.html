@@ -2,20 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberShield Safety Tips — Practical daily checklists, multi-factor authentication guides, password management best practices, and physical webcam security protocols.">
+  <meta name="keywords" content="cyber safety tips, 2FA checklist, password manager, webcam security, cybersecurity daily habits">
+  <meta name="author" content="CyberShield Team">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/yaredlab/CyberShield">
+  <meta property="og:title" content="Safety Tips &amp; Checklists — CyberShield">
+  <meta property="og:description" content="Actionable cybersecurity habits and interactive daily checklists for complete online safety.">
+  <meta property="og:image" content="../Image/blue_eyes icon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Safety Tips &amp; Checklists — CyberShield">
+  <meta name="twitter:description" content="Actionable cybersecurity habits and interactive daily checklists for complete online safety.">
+  <meta name="twitter:image" content="../Image/blue_eyes icon.png">
+
   <title>Safety Tips — CyberShield</title>
   <link rel="icon" type="image/png" href="../Image/blue_eyes icon.png">
+
+  <!-- Critical Resource Preloads -->
+  <link rel="preload" href="../fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../Style/White Mode/style.css">
   <link rel="stylesheet" href="../Style/White Mode/tips.css">
   <link rel="stylesheet" href="../Style/Dark Mode/tip-.css">
   <link rel="stylesheet" href="../Style/Dark Mode/darkmode.css">
   <link rel="stylesheet" href="../Style/award-scroll.css">
+
   <script src="../Java Script/darkmode.js"></script>
   <script src="../Java Script/Effectt.js"></script>
 </head>
 <body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="page-layout">
-    <div class="page-main">
+    <main class="page-main" id="main-content">
 
       <nav>
         <div class="nav-shell">
@@ -40,41 +66,42 @@
       <header class="page-hero">
         <h1>Safety Tips</h1>
         <p>
-          Practical habits and checklists to help you stay safe online every day.
+          Practical habits and actionable checklists to help you stay protected online every single day.
         </p>
       </header>
-      <div class="services tips-services">
+
+      <section class="services tips-services">
         <div class="card">
           <img src="../Image/01.png" alt="Two-Factor Authentication (2FA) icon">
           <h1>01</h1>
           <h3>Use Two-Factor Authentication (2FA)</h3>
-          <p>Add a second verification step via SMS or authenticator app so unauthorized users cannot access your account.</p>
+          <p>Add a second verification step via SMS, security keys, or an authenticator app so stolen passwords alone cannot compromise your account.</p>
         </div>
 
         <div class="card">
           <img src="../Image/02.png" alt="Website address security check icon">
           <h1>02</h1>
           <h3>Check Website Addresses Carefully</h3>
-          <p>Phishing sites imitate official portals. Verify domain spellings before logging in (e.g., look for HTTPS and real domains).</p>
+          <p>Phishing sites imitate official portals. Inspect domain spellings, TLS certificates, and URL parameters prior to entering confidential credentials.</p>
         </div>
 
         <div class="card">
           <img src="../Image/03.png" alt="Webcam privacy shutter icon">
           <h1>03</h1>
           <h3>Cover Your Webcam When Not in Use</h3>
-          <p>Use a physical camera cover or disconnect external webcams to prevent unauthorized camera surveillance.</p>
+          <p>Deploy physical camera shutters or disconnect external sensors to safeguard against surreptitious spyware monitoring.</p>
         </div>
 
         <div class="card">
           <img src="../Image/04.png" alt="Data backup and cloud storage icon">
           <h1>04</h1>
           <h3>Back Up Important Files Regularly</h3>
-          <p>Maintain encrypted local or cloud backups to protect your critical documents against ransomware extortion.</p>
+          <p>Maintain encrypted off-site and local cold backups following the 3-2-1 rule to nullify ransomware extortion attempts.</p>
         </div>
-      </div>
+      </section>
 
       <div class="tips-details">
-        <div class="tip-detail glass card">
+        <section class="tip-detail glass card">
           <div class="tip-detail-row">
             <div class="tip-detail-img-cell">
               <img src="../Image/004_In_a_digital_art_style_a_robot_with_a_sleek_cV3b_VnO.png" alt="Fingerprint security representing strong password protection">
@@ -82,18 +109,18 @@
             <div class="tip-detail-text-cell">
               <div class="tip-detail-content">
                 <h2>Strong Passwords</h2>
-                        <p>
-                          Construct resilient passphrases of 16+ characters combining diverse cases, numerical values,
-                          and special symbols. Steer clear of predictable personal details, dictionary words, and common substitutions.
-                        </p>
-                        <p>
-                          Leverage an encrypted password manager to automatically generate, autofill, and synchronize distinct,
-                          complex credentials across your endpoints—eliminating the risk of credential reuse.
-                        </p>
+                <p>
+                  Construct resilient passphrases of 16+ characters combining diverse cases, numerical values,
+                  and special symbols. Steer clear of predictable personal details, dictionary words, and common substitutions.
+                </p>
+                <p>
+                  Leverage an encrypted password manager to automatically generate, autofill, and synchronize distinct,
+                  complex credentials across your endpoints—eliminating the risk of credential reuse.
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <section class="tip-detail glass card">
           <div class="tip-detail-row">
@@ -103,14 +130,14 @@
             <div class="tip-detail-text-cell">
               <div class="tip-detail-content">
                 <h2>Phishing Awareness</h2>
-                        <p>
-                          Maintain healthy skepticism toward unsolicited communications, even if sender names look familiar.
-                          Carefully scrutinize domain names for spoofing techniques, typo-squatting, and contrived urgency.
-                        </p>
-                        <p>
-                          Reputable organizations never solicit passwords, PINs, or sensitive recovery codes via email or SMS.
-                          When in doubt, independently open the official portal via trusted bookmarks rather than clicking links.
-                        </p>
+                <p>
+                  Maintain healthy skepticism toward unsolicited communications, even if sender names look familiar.
+                  Carefully scrutinize domain names for spoofing techniques, typo-squatting, and contrived urgency.
+                </p>
+                <p>
+                  Reputable organizations never solicit passwords, PINs, or sensitive recovery codes via email or SMS.
+                  When in doubt, independently open the official portal via trusted bookmarks rather than clicking links.
+                </p>
               </div>
             </div>
           </div>
@@ -120,16 +147,16 @@
       <div class="banner-sub">
         <h2>Why Cyber Safety Matters</h2>
         <p>
-          In today's digital world, cyber safety is just as important as locking your front door before sleeping. The internet is full of useful information, entertainment, and communication, but it also contains dangers like hackers, scammers, viruses, and fake websites.
+          In an interconnected world, digital safety is as essential as securing your physical home. The internet enriches our daily routines with limitless knowledge and connection, yet it also exposes users to sophisticated risks—ranging from automated credential harvesting to deceptive social engineering schemes.
         </p>
         <p>
-          Cyber safety awareness means learning how to protect your personal information online. Use strong passwords with a mix of letters, numbers, and symbols, and avoid suspicious links and messages promising unexpected rewards.
+          Proactive cybersecurity awareness empowers you to safeguard your digital identity. By adopting robust passphrases, scrutinizing unsolicited communications, and verifying digital sources before taking action, you transform from an easy target into an active defender of your personal data.
         </p>
         <p>
-          Keeping devices updated is important because updates fix security vulnerabilities. Antivirus software, two-factor authentication, and sensible privacy settings can help keep your accounts safe. Be cautious on public Wi‑Fi networks.
+          Maintaining security hygiene requires consistent habits: applying timely software patches to seal known vulnerabilities, enabling multi-factor authentication across all critical services, and utilizing encrypted connections whenever accessing public networks.
         </p>
         <p>
-          Cyber safety is for everyone — students, teachers, professionals, and family members. Stay alert, think before you click, and follow basic safety rules to enjoy the online world securely.
+          Cyber resilience is a shared responsibility across every demographic—from students and educators to working professionals. Cultivate mindful online habits, verify before you trust, and navigate the web with informed confidence.
         </p>
       </div>
 
@@ -137,7 +164,7 @@
         <div class="glass card checklist">
           <h2>Daily Safety Checklist</h2>
           <p class="checklist-sub">
-            Go through these steps each day to stay protected online.
+            Go through these steps each day to verify and reinforce your online protection posture.
           </p>
 
           <div class="checklist-progress-container">
@@ -153,23 +180,23 @@
           <ul class="checklist-items">
             <li class="checklist-item">
               <input type="checkbox" id="check-1">
-              <label for="check-1">I used a strong, unique password today</label>
+              <label for="check-1">I used strong, unique credentials backed by a password manager today</label>
             </li>
             <li class="checklist-item">
               <input type="checkbox" id="check-2">
-              <label for="check-2">I avoided clicking suspicious links or attachments</label>
+              <label for="check-2">I inspected sender addresses and avoided clicking unverified links or attachments</label>
             </li>
             <li class="checklist-item">
               <input type="checkbox" id="check-3">
-              <label for="check-3">My antivirus software is active and up to date</label>
+              <label for="check-3">My system firewall and endpoint security definitions are active and up to date</label>
             </li>
             <li class="checklist-item">
               <input type="checkbox" id="check-4">
-              <label for="check-4">I only used secure, trusted Wi-Fi networks</label>
+              <label for="check-4">I connected exclusively via encrypted networks and avoided public Wi-Fi risks</label>
             </li>
             <li class="checklist-item">
               <input type="checkbox" id="check-5">
-              <label for="check-5">I did not share sensitive personal information online</label>
+              <label for="check-5">I guarded sensitive identity data and enabled multi-factor authentication (2FA)</label>
             </li>
           </ul>
 
@@ -179,8 +206,8 @@
       <div class="tips-video-wrap">
         <h2>Quick Safety Guide</h2>
         <p class="video-desc">
-          Watch this video for a quick overview of the most important
-          online safety habits everyone should know.
+          Watch this educational feature for an overview of essential phishing defense
+          and everyday cyber safety principles.
         </p>
         <div class="video-wrapper">
           <video controls preload="metadata">
@@ -189,9 +216,9 @@
         </div>
       </div>
 
-  </div>
-  <div class="page-footer-row">
+    </main>
 
+    <div class="page-footer-row">
       <footer class="site-footer">
         <div class="footer-outer">
           <div class="footer-inner">
@@ -214,9 +241,8 @@
           <p>© 2026 Cyber Safety Awareness · Internet Programming — Educational Project</p>
         </div>
       </footer>
-
+    </div>
   </div>
-</div>
 
   <!-- GSAP, ScrollTrigger, Lenis Smooth Scroll & Award-Winning Animation Engine -->
   <script src="../Java Script/vendor/gsap.min.js"></script>
