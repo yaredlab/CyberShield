@@ -2,24 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Explore — CyberShield</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore CyberShield — Interactive deep-dive modules into phishing, malware, ransomware, credential hardening, and multimedia safety demonstrations.">
+  <meta name="keywords" content="cybersecurity topics, explore cyber safety, phishing defense, malware analysis, password security, video tutorials">
+  <meta name="author" content="CyberShield Team">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/yaredlab/CyberShield">
+  <meta property="og:title" content="Explore Security Topics — CyberShield">
+  <meta property="og:description" content="Deep-dive into cyber threats and discover actionable defense strategies to protect your digital footprint.">
+  <meta property="og:image" content="../Image/blue_eyes icon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Explore Security Topics — CyberShield">
+  <meta name="twitter:description" content="Deep-dive into cyber threats and discover actionable defense strategies to protect your digital footprint.">
+  <meta name="twitter:image" content="../Image/blue_eyes icon.png">
+
+  <title>Explore Topics — CyberShield</title>
   <link rel="icon" type="image/png" href="../Image/blue_eyes icon.png">
+
+  <!-- Critical Resource Preloads for Zero-FOUT -->
+  <link rel="preload" href="../fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../Style/White Mode/style.css">
   <link rel="stylesheet" href="../Style/White Mode/explore.css">
   <link rel="stylesheet" href="../Style/Dark Mode/explore.css">
   <link rel="stylesheet" href="../Style/Dark Mode/darkmode.css">
   <link rel="stylesheet" href="../Style/award-scroll.css">
+
   <!-- darkmode.js MUST be in <head> so dark class is applied before first paint -->
   <script src="../Java Script/darkmode.js"></script>
   <script src="../Java Script/Effectt.js"></script>
-
 </head>
 <body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="page-layout">
-    <div class="page-main">
+    <main class="page-main" id="main-content">
 
-    
       <nav>
         <div class="nav-shell">
           <div class="nav-cell-brand">
@@ -86,18 +110,18 @@
               <img src="../Image/013_In_a_cinematic_futuristic_style_a_sleek_silver_PEcf6uj4.png" alt="A locked computer screen showing malware">
             </div>
             <div class="explore-text-cell">
-                <div class="explore-content">
-                  <h2>Malware &amp; Ransomware</h2>
-                  <p>
-                    Malware encompasses a spectrum of malicious code—such as spyware, keyloggers, Trojans, and worms—crafted
-                    to compromise system integrity, harvest keystrokes, and exfiltrate confidential files without authorization.
-                  </p>
-                  <p>
-                    Ransomware aggressively encrypts mission-critical data and extorts victims for decryption keys.
-                    Maintain air-gapped or immutable backups, keep operating systems patched, and restrict unknown executable files.
-                  </p>
-                  <a class="btn btn-ghost" href="tips.html">See Prevention Tips</a>
-                </div>
+              <div class="explore-content">
+                <h2>Malware &amp; Ransomware</h2>
+                <p>
+                  Malware encompasses a spectrum of malicious code—such as spyware, keyloggers, Trojans, and worms—crafted
+                  to compromise system integrity, harvest keystrokes, and exfiltrate confidential files without authorization.
+                </p>
+                <p>
+                  Ransomware aggressively encrypts mission-critical data and extorts victims for decryption keys.
+                  Maintain air-gapped or immutable backups, keep operating systems patched, and restrict unknown executable files.
+                </p>
+                <a class="btn btn-ghost" href="tips.html">See Prevention Tips</a>
+              </div>
             </div>
           </div>
         </section>
@@ -108,44 +132,45 @@
               <img src="../Image/006_In_a_futuristic_digital_art_style_a_metallic_H12N-Y0j.png" alt="Fingerprint biometric security">
             </div>
             <div class="explore-text-cell">
-                <div class="explore-content">
-                  <h2>Password Safety</h2>
-                  <p>
-                    Length and unpredictability form the bedrock of robust credential defense. Adopt multi-word passphrases
-                    enriched with varied character sets, resisting credential stuffing and automated brute-force attacks.
-                  </p>
-                  <p>
-                    Avoid credential recycling across multiple portals. Employ a reputable password manager paired with
-                    hardware-backed multi-factor authentication (MFA) to eliminate single points of failure.
-                  </p>
-                  <a class="btn btn-ghost" href="tips.html">See Prevention Tips</a>
-                </div>
+              <div class="explore-content">
+                <h2>Password Safety</h2>
+                <p>
+                  Length and unpredictability form the bedrock of robust credential defense. Adopt multi-word passphrases
+                  enriched with varied character sets, resisting credential stuffing and automated brute-force attacks.
+                </p>
+                <p>
+                  Avoid credential recycling across multiple portals. Employ a reputable password manager paired with
+                  hardware-backed multi-factor authentication (MFA) to eliminate single points of failure.
+                </p>
+                <a class="btn btn-ghost" href="tips.html">See Prevention Tips</a>
+              </div>
             </div>
           </div>
         </section>
+
         <div class="banner-sub">
-        <h2>Cyber safety</h2>
-        <p>
-          In today's digital world, cyber safety is just as important as locking your house door before sleeping. The internet is full of useful information, entertainment, and communication, but it also contains dangers like hackers, scammers, viruses, and fake websites.
-        </p>
-        <p>
-          Cyber safety awareness means learning how to protect your personal information online. Use strong passwords with a mix of letters, numbers, and symbols, and avoid suspicious links and messages promising unexpected rewards.
-        </p>
-        <p>
-          Keeping devices updated is important because updates fix security problems. Antivirus software, two-factor authentication, and sensible privacy settings can help keep your accounts safe. Be cautious on public Wi‑Fi networks.
-        </p>
-        <p>
-          Cyber safety is for everyone — students, teachers, workers, and family members. Stay alert, think before you click, and follow basic safety rules to enjoy the online world securely.
-        </p>
-      </div>
+          <h2>Why Cyber Safety Matters</h2>
+          <p>
+            In an interconnected world, digital safety is as essential as securing your physical home. The internet enriches our daily routines with limitless knowledge and connection, yet it also exposes users to sophisticated risks—ranging from automated credential harvesting to deceptive social engineering schemes.
+          </p>
+          <p>
+            Proactive cybersecurity awareness empowers you to safeguard your digital identity. By adopting robust passphrases, scrutinizing unsolicited communications, and verifying digital sources before taking action, you transform from an easy target into an active defender of your personal data.
+          </p>
+          <p>
+            Maintaining security hygiene requires consistent habits: applying timely software patches to seal known vulnerabilities, enabling multi-factor authentication across all critical services, and utilizing encrypted connections whenever accessing public networks.
+          </p>
+          <p>
+            Cyber resilience is a shared responsibility across every demographic—from students and educators to working professionals. Cultivate mindful online habits, verify before you trust, and navigate the web with informed confidence.
+          </p>
+        </div>
 
       </div>
 
       <div id="video" class="video-section-explore">
         <h2>Watch &amp; Learn</h2>
         <p class="video-desc">
-          Watch this short video to learn more about how cyber threats work
-          and what you can do to stay protected.
+          Watch this educational session to understand how common cyber attack vectors operate
+          and how proactive defenses keep your systems resilient.
         </p>
         <div class="video-wrapper">
           <video controls autoplay muted preload="metadata">
@@ -153,9 +178,9 @@
           </video>
         </div>
       </div>
-      
 
-  </div>
+    </main>
+
     <div class="page-footer-row">
       <footer class="site-footer">
         <div class="footer-outer">
@@ -179,9 +204,8 @@
           <p>© 2026 Cyber Safety Awareness · Internet Programming — Educational Project</p>
         </div>
       </footer>
-
+    </div>
   </div>
-</div>
 
   <!-- GSAP, ScrollTrigger, Lenis Smooth Scroll & Award-Winning Animation Engine -->
   <script src="../Java Script/vendor/gsap.min.js"></script>
